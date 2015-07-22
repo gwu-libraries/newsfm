@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}
+{% if user.is_authenticated and not backends.associated %}
+
+ No Backend Associated
+
+ {% elif user.is_authenticated and backends.associated %}
+
+  Backend Associated 
+  List of Backends -- {{ backends }}
+  Backends Connected -- {{ backends.associated }}
+
+ {% else %}
+
+ Please login
+
+ {% endif %}
+
+  <a>Hello, {{ user.get_full_name }}!</a>
+  <br>
+  <a href="/logout">Logout</a>
+    {% if 'twitter' in backends.not_associated %}
+      <a href="{% url 'social:begin' 'twitter' %}?next={{ request.path }}">Login with Twitter</a>
+    {% endif %}
+    {% if 'tumblr' in backends.not_associated %}
+      <a href="{% url 'social:begin' 'tumblr' %}?next={{ request.path }}">Login with Tumblr</a>
+    {% endif %}
+    {% if 'flickr' in backends.not_associated %}
+      <a href="{% url 'social:begin' 'flickr' %}?next={{ request.path }}">Login with Flickr</a>
+    {% endif %}
+    {% if 'flickr' in backends.not_associated %}
+      <a href="{% url 'social:begin' 'weibo' %}?next={{ request.path }}">Login with Weibo</a>
+    {% endif %}
+
+<li>Permission object{{ perms }}</li>
+<li>Permission set for Social App{{ perms.social_app }}</li>
+{{ perms.default.usersocialauth }}
+{% endblock content %}

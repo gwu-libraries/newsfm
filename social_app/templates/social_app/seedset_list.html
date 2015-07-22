@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Seed Sets</h1>
+<ul>
+    {% for seedset in object_list %}
+    <li>{{ seedset.seed_set_name }} - {{ seedset.seed_set_type }} -{{ seedset.collection_method }} - {{ seedset.collection_schedule }} - {{ seedset.seed_set_status }}</li>
+    {% empty %}
+    <li>No seed set yet.</li>
+    {% endfor %}
+</ul>
+{% endblock content %}

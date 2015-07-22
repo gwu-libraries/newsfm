@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Seeds</h1>
+<ul>
+    {% for seed in object_list %}
+    <li>{{ seed.seed_name }} - {{ seed.collection_method }} - {{ seed.collection_schedule }} - {{ seed.seed_status }}</li>
+    {% empty %}
+    <li>No seed yet.</li>
+    {% endfor %}
+</ul>
+{% endblock content %}

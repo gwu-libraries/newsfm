@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Collections</h1>
+<ul>
+    {% for collection in object_list %}
+    <li>{{ collection.collection_name }} - {{ collection.group_name }} - {{ collection.collection_method }} - {{ collection.collection_schedule }} - {{ collection.collection_status }}</li>
+    {% empty %}
+    <li>No collection yet.</li>
+    {% endfor %}
+</ul>
+{% endblock content %}

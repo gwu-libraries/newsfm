@@ -1,0 +1,29 @@
+.jumbotron {
+    padding-left:30px !important;
+    padding-right:30px !important;
+    margin-botton:0px !important;
+}
+.navbar {
+    margin-bottom:0px !important;
+}
+.table {
+    margin-top:0px !important;
+}
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    display: table;
+}
+.footer {
+    background-color: #2FA4E7;
+    color:#FFFFFF;
+    display: table-row;
+    height: 0;
+    text-align:center;
+    margin: 0em 0em 0em 0em;
+    padding: 1.5em;
+    position: relative;
+    bottom:0px;
+    width: 100%;
+}
