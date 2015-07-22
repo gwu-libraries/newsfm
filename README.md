@@ -1,2 +1,2 @@
 # newsfm
-Test Project for Socail Feed Manager
+Test Project for Social Feed Manager
